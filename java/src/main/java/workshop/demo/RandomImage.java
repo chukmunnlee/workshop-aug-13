@@ -21,7 +21,7 @@ public class RandomImage {
 	}
 	public String[] getImages(int count) {
 		final String[] images = new String[count];
-		int[] nums = IntStream.range(0, 14).collect(Collectors.toList()).toArray();
+		int[] nums = IntStream.range(0, 14).toArray();
 		return null;
 	}
 
