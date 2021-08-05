@@ -15,7 +15,7 @@ public class DovJavaApplication {
 		
 		app.setDefaultProperties(Collections.singletonMap("server.port", port));
 
-		System.out.printf("Starting on port %s\n", port);
+		System.out.printf("Starting on port %s at %s\n", port, (new Date()).toString());
 		app.run(args);
 	}
 

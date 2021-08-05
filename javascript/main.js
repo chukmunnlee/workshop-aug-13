@@ -44,7 +44,7 @@ app.set('view engine', 'hbs')
 app.use(morgan('common'))
 
 app.get('/healthz', (req, resp) => {
-	resp.status(204).end()
+	resp.status(200).send({ 'timestamp': (new Date()).getTime() })
 })
 
 app.use(express.static(__dirname + '/public'))
