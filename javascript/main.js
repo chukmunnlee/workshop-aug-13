@@ -20,9 +20,9 @@ const rnd = (range = 14, total = 4) => {
 
 const instHash = (opt) => {
 	if (!!opt['hash'])
-		return `-${opt['hash']}`
+		return `${opt['hash']}`
 	else if (!!process.env.INSTANCE_HASH)
-		return `-${process.env.INSTANCE_HASH}`
+		return `${process.env.INSTANCE_HASH}`
 	return ''
 }
 
