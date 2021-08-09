@@ -14,8 +14,8 @@ RUN npm ci
 
 EXPOSE ${PORT}
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
-	--retries=3 CMD curl -s -f localhost:3000/healthz || exit 1
+#HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
+#	--retries=3 CMD curl -s -f localhost:3000/healthz || exit 1
 
 ENTRYPOINT [ "node", "main.js" ]
 
