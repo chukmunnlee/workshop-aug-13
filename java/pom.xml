@@ -61,9 +61,11 @@
 				<configuration>
 					<to>
 						<image>dov-java</image>
+						<!--
 						<tags>
 							<tag>v1</tag>
 						</tags>
+						-->
 					</to>
 					<container>
 						<ports>
