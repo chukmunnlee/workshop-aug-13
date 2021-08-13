@@ -53,6 +53,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 			<plugin>
 				<!-- https://mvnrepository.com/artifact/com.google.cloud.tools/jib-maven-plugin -->
 				<groupId>com.google.cloud.tools</groupId>
@@ -74,6 +75,7 @@
 					</container>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>

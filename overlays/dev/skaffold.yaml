@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+   name: dev-build
+
+deploy:
+   kustomize:
+      paths:
+      - .
+      flags:
+         delete:
+         - --force
+
+portForward:
+- resourceType: Service
+  resourceName: dev-dov
+  port: 5000
+  localPort: 8080
+

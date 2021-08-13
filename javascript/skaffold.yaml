@@ -1,0 +1,31 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+   name: js-build
+
+build:
+   artifacts:
+   - image: dov
+     context: .
+     docker:
+        dockerfile: ./Dockerfile
+
+   tagPolicy:
+      envTemplate:
+         template: "v2"
+
+deploy:
+   kubectl:
+      manifests:
+      - ./config.yaml
+      - ./deploy.yaml
+      flags:
+         delete:
+         - --grace-period=1
+
+portForward:
+- resourceType: Service
+  resourceName: dov
+  port: 5000
+  localPort: 8080
+

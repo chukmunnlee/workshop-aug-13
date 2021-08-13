@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+   name: java-build
+
+build:
+   artifacts:
+   - image: dov-java
+     context: .
+     jib:
+        type: maven
+
+   tagPolicy:
+      envTemplate:
+         template: "v3-java"
+

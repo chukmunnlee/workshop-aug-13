@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+   name: uber-build
+
+requires:
+- path: ./java
+- path: ./javascript
+

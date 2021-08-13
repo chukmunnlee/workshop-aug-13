@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dov
+  name: dov
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dov
+  template:
+    metadata:
+      labels:
+        app: dov
+    spec:
+      containers:
+      - name: dov
+        image: dov:v2
+        ports:
+        - containerPort: 3000
+        env:
+        - name: INSTANCE_HASH
+          valueFrom:
+             fieldRef:
+                fieldPath: metadata.name
+        envFrom:
+        - configMapRef:
+           name: dov
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dov
+  name: dov
+spec:
+  type: ClusterIP
+  selector:
+    app: dov
+  ports:
+  - name: 5000-3000
+    port: 5000
+    protocol: TCP
+    targetPort: 3000

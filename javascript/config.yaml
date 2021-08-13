@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dov
+data:
+  INSTANCE_NAME: this is friday the 13th
